@@ -1,0 +1,49 @@
+@import "../../../theme/variables.scss";
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow-x: auto;
+  width: 380px;
+}
+
+.gallery-item {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  margin: 0 2px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.full-screen {
+  height: fit-content;
+  width: 100%;
+  margin-top: 30%;
+  cursor: pointer;
+
+  @media only screen and (min-width: 1281px) {
+    height: 100vh;
+    width: auto;
+    margin-top: 0;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+}

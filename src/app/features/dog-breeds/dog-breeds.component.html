@@ -1,0 +1,65 @@
+<div class="flex-row">
+  <div>
+    <h1 class="title">Dog Breeds</h1>
+  </div>
+  <div>
+    <form [formGroup]="form">
+      <input
+        type="text"
+        appFocus
+        [formControl]="searchTerm"
+        (input)="setFilterValue()"
+        placeholder="Breed name"
+        autocomplete="off"
+        autofocus
+      />
+    </form>
+  </div>
+</div>
+
+<hr />
+
+<div class="flex-row-reverse">
+  <div class="breed-list-container w-50">
+    <ng-container
+      *ngIf="state.filteredBreeds() && state.filteredBreeds().length > 0"
+    >
+    </ng-container>
+
+    <ng-container
+      *ngIf="
+        state.filterValue() &&
+        (!state.filteredBreeds() || state.filteredBreeds().length === 0)
+      "
+      >No items
+    </ng-container>
+
+    <div *ngFor="let breed of state.filteredBreeds()">
+      <h3 (click)="fetchImages(breed.key)">{{ breed.key | titlecase }}</h3>
+      <ul *ngIf="breed.values.length > 0">
+        <li
+          *ngFor="let subcategory of breed.values"
+          (click)="fetchImages(breed.key, subcategory)"
+        >
+          {{ subcategory | titlecase }}
+        </li>
+      </ul>
+
+      <hr />
+    </div>
+  </div>
+
+  <div class="image-container w-50">
+    <ng-container *ngIf="state.dogImage() && state.dogImagesList()">
+      <img [src]="state.dogImage()" alt="Dog image" class="img" />
+
+      <hr />
+
+      <app-image-gallery
+        (subBreedClicked)="
+          fetchImages(state.selectedBreed(), state.selectedSubBreed()!)
+        "
+      ></app-image-gallery>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="top-menu" [ngClass]="{ show: state.isMenuOpen() }">
+  <div class="top-menu-header">
+    <a
+      class="top-menu-item"
+      [routerLink]="['/home']"
+      [routerLinkActive]="'active'"
+      (click)="toggleMenu()"
+      >Home</a
+    >
+    <a
+      class="top-menu-item"
+      [routerLink]="['/dog-breeds']"
+      [routerLinkActive]="'active'"
+      (click)="toggleMenu()"
+      >Dog Breeds</a
+    >
+  </div>
+</div>

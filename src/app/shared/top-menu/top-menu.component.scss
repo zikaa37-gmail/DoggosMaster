@@ -1,0 +1,50 @@
+@import "../../../theme/variables.scss";
+
+.top-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $white;
+  border-bottom: solid 1px $light-gray;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.top-menu.show {
+  transform: translateY(52px);
+}
+
+.top-menu-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.top-menu-item {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  font-size: 16px;
+
+  &:hover {
+    background-color: $dark-gray;
+  }
+}
+
+.top-menu-item.active {
+  font-weight: bold;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}

@@ -1,0 +1,25 @@
+@import "../../../theme/variables.scss";
+
+.primary-btn {
+  border: solid 1px $dark-orange;
+  border-radius: 10px;
+  color: $white;
+  background-color: $gray;
+  padding: 10px;
+
+  &:hover {
+    background-color: $dark-gray;
+  }
+}
+
+.secondary-btn {
+  border: solid 1px $dark-orange;
+  border-radius: 10px;
+  color: $dark-orange;
+  background-color: $white;
+  padding: 10px;
+
+  &:hover {
+    background-color: $light-orange;
+  }
+}

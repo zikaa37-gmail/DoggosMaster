@@ -1,0 +1,108 @@
+@import "./variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 auto;
+  padding: 10px;
+  border: solid 1px $light-gray;
+  border-top: none;
+  min-height: 85vh;
+
+  @media only screen and (min-width: 1280px) {
+    width: 80%;
+  }
+}
+
+h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 30px;
+  color: $dark-gray;
+
+  @media only screen and (min-width: 1280px) {
+    font-size: 1.3rem;
+  }
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 24px;
+  color: $dark-gray;
+
+  @media only screen and (min-width: 1280px) {
+    font-size: 1.1rem;
+  }
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 20px;
+  color: $dark-gray;
+
+  @media only screen and (min-width: 1280px) {
+    font-size: 1.1rem;
+  }
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 20px;
+  color: $dark-gray;
+  word-break: break-word;
+  white-space: normal;
+
+  @media only screen and (min-width: 1280px) {
+    font-size: 1.1rem;
+  }
+}
+
+a,
+button,
+.pointer {
+  cursor: pointer;
+}
+
+.top-divider {
+  margin-top: 30px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (min-width: 481px) {
+    flex-direction: row;
+  }
+}
+
+.flex-row-reverse {
+  display: flex;
+  flex-direction: column-reverse;
+
+  @media only screen and (min-width: 481px) {
+    flex-direction: row;
+  }
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  background-color: $white;
+}
+
+.w-50 {
+  width: 100%;
+
+  @media only screen and (min-width: 4801x) {
+    width: 50%;
+  }
+}
+
+.border {
+  border: solid 1px red;
+}

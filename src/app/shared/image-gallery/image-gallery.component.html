@@ -1,0 +1,33 @@
+<div class="gallery" *ngIf="state.dogImagesList()">
+  <div *ngFor="let item of state.dogImagesList()">
+    <img
+      [src]="item"
+      alt="Galery item"
+      class="gallery-item"
+      (click)="setSelectedImage(item)"
+    />
+  </div>
+</div>
+
+<div class="modal" *ngIf="selectedImage()" (click)="setSelectedImage('')">
+  <img [src]="selectedImage()" alt="Selected image" class="full-screen" />
+</div>
+
+<div
+  *ngIf="
+    state.selectedSubBreedGroup() && state.selectedSubBreedGroup().length >= 2
+  "
+  class="row"
+>
+  <div *ngFor="let subBreed of state.selectedSubBreedGroup()">
+    <app-button
+      [text]="subBreed"
+      [type]="
+        subBreed === state.selectedSubBreed()
+          ? BUTTON_TYPE.PRIMARY
+          : BUTTON_TYPE.SECONDARY
+      "
+      (buttonClicked)="onSubBreedClick(subBreed)"
+    ></app-button>
+  </div>
+</div>
